@@ -1,0 +1,89 @@
+/* Wide desktop keeps request and response side by side; everything narrower
+   stacks them so the response is never squeezed. */
+@media (max-width: 1180px) {
+  .workspace__panels {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(220px, 0.9fr) minmax(0, 1.1fr);
+    overflow-y: auto;
+  }
+
+  .panel + .panel {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 960px) {
+  .app {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sidebar { display: none; }
+
+  .generator {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+
+    &__list {
+      flex-direction: row;
+      overflow-x: auto;
+      border-right: 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    &__option { white-space: nowrap; }
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --topbar-height: 48px;
+  }
+
+  .request-bar {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+
+    &__url { order: 3; flex-basis: 100%; }
+  }
+
+  .method-selector select { width: 106px; }
+
+  .kv-editor__head,
+  .kv-editor__row {
+    grid-template-columns: 30px minmax(0, 1fr) minmax(0, 1fr) 30px;
+  }
+
+  .page { padding: var(--space-3); }
+
+  .status-bar { gap: var(--space-2) var(--space-2); }
+
+  .json-viewer__line-number { width: 34px; }
+
+  .toasts {
+    right: var(--space-2);
+    left: var(--space-2);
+    bottom: var(--space-2);
+    width: auto;
+  }
+
+  .modal { padding: var(--space-2); }
+  .modal__dialog { max-height: 92dvh; }
+}
+
+@media (max-width: 520px) {
+  .settings__row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+  }
+
+  .status-bar__url { display: none; }
+}
+
+/* Print: documentation and responses should be readable on paper. */
+@media print {
+  .sidebar, .topbar, .request-bar, .toasts { display: none !important; }
+  .app { display: block; height: auto; }
+  .panel__body { overflow: visible; }
+}

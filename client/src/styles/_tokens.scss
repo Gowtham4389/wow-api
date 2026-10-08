@@ -1,0 +1,126 @@
+/* Design tokens. Every colour is defined once per theme and consumed through
+   custom properties so components never hardcode a palette value. */
+
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.875rem;
+  --text-md: 0.9375rem;
+  --text-lg: 1.0625rem;
+  --text-xl: 1.375rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+
+  --radius-sm: 6px;
+  --radius: 9px;
+  --radius-lg: 14px;
+  --radius-full: 999px;
+
+  --sidebar-width: 268px;
+  --topbar-height: 52px;
+
+  --transition: 140ms cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* Light theme */
+  --bg: #f6f7f9;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-subtle: #f2f3f6;
+  --surface-hover: #eceef2;
+  --surface-active: #e4e7ee;
+  --border: #e3e6ec;
+  --border-strong: #cfd4de;
+  --text: #14161c;
+  --text-secondary: #5a6272;
+  --text-muted: #868e9f;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-soft: #eef0ff;
+  --accent-text: #ffffff;
+  --focus-ring: rgba(79, 70, 229, 0.35);
+
+  --success: #15803d;
+  --success-soft: #dcfce7;
+  --info: #0369a1;
+  --info-soft: #e0f2fe;
+  --warning: #b45309;
+  --warning-soft: #fef3c7;
+  --danger: #b91c1c;
+  --danger-soft: #fee2e2;
+
+  --json-key: #7c3aed;
+  --json-string: #15803d;
+  --json-number: #b45309;
+  --json-boolean: #0369a1;
+  --json-null: #868e9f;
+  --highlight: #fde68a;
+  --highlight-active: #f59e0b;
+
+  --shadow-sm: 0 1px 2px rgba(16, 20, 32, 0.06);
+  --shadow: 0 4px 14px rgba(16, 20, 32, 0.08);
+  --shadow-lg: 0 18px 40px rgba(16, 20, 32, 0.16);
+
+  --method-get: #15803d;
+  --method-post: #b45309;
+  --method-put: #0369a1;
+  --method-patch: #7c3aed;
+  --method-delete: #b91c1c;
+  --method-head: #5a6272;
+  --method-options: #5a6272;
+}
+
+:root[data-theme='dark'] {
+  --bg: #0d0f14;
+  --bg-elevated: #14171e;
+  --surface: #14171e;
+  --surface-subtle: #191d26;
+  --surface-hover: #1f242f;
+  --surface-active: #262c38;
+  --border: #242a35;
+  --border-strong: #333a48;
+  --text: #e7e9ee;
+  --text-secondary: #a4acbb;
+  --text-muted: #79818f;
+  --accent: #6d7cff;
+  --accent-hover: #808dff;
+  --accent-soft: #1b1f3a;
+  --accent-text: #ffffff;
+  --focus-ring: rgba(109, 124, 255, 0.4);
+
+  --success: #4ade80;
+  --success-soft: #0f2a1b;
+  --info: #58b6f5;
+  --info-soft: #0c2434;
+  --warning: #fbbf24;
+  --warning-soft: #2e2208;
+  --danger: #f87171;
+  --danger-soft: #331414;
+
+  --json-key: #c4a7fb;
+  --json-string: #7fd8a0;
+  --json-number: #fbbf24;
+  --json-boolean: #6cb8f0;
+  --json-null: #79818f;
+  --highlight: #4d3b12;
+  --highlight-active: #b45309;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.6);
+
+  --method-get: #4ade80;
+  --method-post: #fbbf24;
+  --method-put: #58b6f5;
+  --method-patch: #c4a7fb;
+  --method-delete: #f87171;
+  --method-head: #a4acbb;
+  --method-options: #a4acbb;
+}
