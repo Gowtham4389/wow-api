@@ -126,6 +126,22 @@ npm run build     # builds the client into client/dist
 npm start         # starts the Express server
 ```
 
+### Vercel
+
+Deploy the **repository root**, with the Vercel project's Root Directory left
+empty and Framework Preset set to **Other**. The root `vercel.json` builds
+`client/dist` and routes `/api/*` to the Express app exported by `api/index.js`.
+Leave `VITE_API_BASE_URL` and `SERVE_CLIENT` unset for this same-origin setup.
+
+Deploying only the `client` directory publishes the UI without its API, causing
+the **Proxy offline** indicator. After deploying, `/api/health` should return JSON
+with `status: "ok"`, and `/api/proxy/info` should return the proxy limits.
+
+Vercel function payloads are limited to 4.5 MB, including the proxy's JSON/base64
+encoding. The in-memory rate limiter applies separately to each function instance.
+
+### Other hosts
+
 Two supported deployment shapes:
 
 **1. One service.** Set `SERVE_CLIENT=true` and the Express process serves `client/dist`
